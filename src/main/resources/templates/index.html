@@ -7,23 +7,31 @@
     <title>Good Thymes Virtual Grocery</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--<link rel="stylesheet" type="text/css" media="all"
-          href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />-->
-
     <link rel="stylesheet" th:href="@{/css/style.build.tailwind.css}" type="text/css">
 </head>
 
-<body>
-<header class="bg-white container mx-auto py-8">
+
+<header class="container mx-auto py-8">
     <h1 class="text-4xl font-bold px-4  ">Welcome to Spring Boot Tailwind</h1>
 </header>
+<body>
+
+<h1 th:text="#{greeting}">Default Greeting</h1>
 
 
-<p class="container justify-center bg-red-500" th:text="#{home.welcome}">Welcome to our grocery store!</p>
+<a href="?lang=en">English</a> |
+<a href="?lang=fr">French</a> |
+<a href="?lang=es">Spanish</a>
+
+<p class="container justify-center bg-amber-400" th:text="#{home.welcome}">Welcome to our grocery store!</p>
 
 
 
 </body>
+<footer class="bg-cyan-950 container">
+    <div class="">
+        RRSS
+    </div>
 
+</footer>
 </html>
