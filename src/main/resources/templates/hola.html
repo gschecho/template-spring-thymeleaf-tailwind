@@ -3,25 +3,9 @@
 <head>
     <title>Página de Inicio</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/css/style.build.tailwind.css}" type="text/css">
-
 </head>
-<body class="container bg-amber-500 color-red ">
+<body class="content ">
 <h1 class="container text-4xl font-bold px-4 text-center" >HOLA</h1>
 <p>Esta es una aplicación de ejemplo usando Thymeleaf.</p>
-<table>
-    <thead>
-        <tr>
-            <td>name</td>
-            <td>description</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td th:text="${name}"></td>
-            <td th:text="${description}"></td>
-        </tr>
-    </tbody>
-</table>
 </body>
 </html>

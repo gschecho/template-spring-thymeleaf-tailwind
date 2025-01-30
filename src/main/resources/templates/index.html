@@ -18,20 +18,21 @@
 
 <h1 th:text="#{greeting}">Default Greeting</h1>
 
+<script th:inline="javascript">
+    let name = Juan;
+    console.log("it's Working");
+</script>
 
-<a href="?lang=en">English</a> |
-<a href="?lang=fr">French</a> |
-<a href="?lang=es">Spanish</a>
 
-<p class="container justify-center bg-amber-400" th:text="#{home.welcome}">Welcome to our grocery store!</p>
+<a href="?lang=en" th:href="@{''(lang=en_EN)}" th:text="#{lang.en}">English</a> |
+<a href="?lang=cat" th:href="@{''(lang=cat_ES)}" th:text="#{lang.cat}">Catalan</a> |
+<a href="?lang=es" th:href="@{''(lang=es_ES)}" th:text="#{lang.es}">Spanish</a>
+
+<p class="container justify-center bg-amber-400" th:text="#{greeting}">Welcome to our grocery store!</p>
 
 
 
 </body>
-<footer class="bg-cyan-950 container">
-    <div class="">
-        RRSS
-    </div>
-
+<footer th:replace="footer :: foot">
 </footer>
 </html>

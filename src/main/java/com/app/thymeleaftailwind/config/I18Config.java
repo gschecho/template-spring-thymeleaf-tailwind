@@ -14,18 +14,25 @@ import java.util.Locale;
 @Configuration
 public class I18Config implements WebMvcConfigurer {
 
+
+    // Internacionalizacion
+    // Se crea una Sesion del sitio por default SessionLocalResolver nos permite decir donde estamos
+    // Lo que hace es utilizar separadores, monedas etc de la región
     @Bean
     public SessionLocaleResolver localeResolver() {
-        SessionLocaleResolver slr = new SessionLocaleResolver();
-        slr.setDefaultLocale(Locale.US);
-        return slr;
+        SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
+        sessionLocaleResolver.setDefaultLocale( new Locale("es","ES"));
+        return sessionLocaleResolver;
     }
 
+
+    // Mecanismo de cambio de idioma.
+    // Intercepta las peticiones y si en la url encuentra lang= a otro idioma, cambia a ese idioma
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
-        LocaleChangeInterceptor lci = new LocaleChangeInterceptor();
-        lci.setParamName("lang");
-        return lci;
+        LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
+        localeChangeInterceptor.setParamName("lang");
+        return localeChangeInterceptor;
     }
 
     @Override
